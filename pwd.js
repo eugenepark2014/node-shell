@@ -1,4 +1,3 @@
-module.exports = function() {
-  console.log(`current directory: ${process.cwd()}`);
-  process.stdout.write("prompt > ");
+module.exports = (done) => {
+  done(`current directory: ${process.cwd()}\n`);
 };
