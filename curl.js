@@ -1,9 +1,17 @@
 // const fs = require("fs");
 const request = require("request");
-module.exports = function(url) {
+module.exports = function(done, url) {
   request(url, function(error, response, body) {
-    console.log("error:", error);
-    console.log("statusCode:", response && response.statusCode);
-    console.log("body:", body);
+    // done("error", error, "statusCode:". response && response.statusCode, "body:", body)
+    if(error){
+      done(error);
+    }
+    else{
+
+      done(body);
+      console.log(response)
+    }
+    // done("statusCode:", response && response.statusCode)
+    // done("body:", body)
   });
 };

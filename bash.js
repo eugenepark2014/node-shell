@@ -11,9 +11,9 @@ process.stdin.on("data", data => {
   } else if (cmd === "ls") {
     ls(done);
   } else if (cmd.slice(0, 3) === "cat") {
-    cat(cmd.slice(4));
+    cat(done, cmd.slice(4));
   } else if (cmd.slice(0, 4) === "curl") {
-    curl(cmd.slice(5));
+    curl(done, cmd.slice(5));
   } else {
     process.stdout.write("You typed: " + cmd + "\n");
     process.stdout.write("prompt > ");
